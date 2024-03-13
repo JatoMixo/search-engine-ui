@@ -1,0 +1,37 @@
+@font-face {
+    font-family: "Montserrat";
+    font-style: bold;
+    src: url("../../public/Montserrat/static/Montserrat-Bold.ttf");
+}
+
+@font-face {
+    font-family: "Montserrat";
+    font-style: normal;
+    src: url("../../public/Montserrat/static/Montserrat-Regular.ttf");
+}
+
+:root {
+    /* VARIABLES */
+    --background: #050505;
+
+    --text: #e1e1e1;
+    --title: #ffffff;
+
+    /* GENERAL STYLES */
+    background-color: var(--background);
+}
+
+p {
+    font-size: 22px;
+
+    color: var(--text);
+    font-family: "Montserrat";
+}
+
+h1 {
+    font-size: 30px;
+    font-family: "Montserrat";
+    font-style: bold;
+
+    color: var(--title);
+}
