@@ -1,0 +1,33 @@
+---
+import ScoreDisplayer from "./ScoreDisplayer.astro";
+
+const {
+    title,
+    description,
+    score,
+} = Astro.props;
+---
+
+<div id="main-container">
+    <ScoreDisplayer score={score}/>
+    <div id="content-section">
+        <h1 id="title">{title}</h1>
+        <p id="description">{description}</p>
+    </div>
+</div>
+
+<style>
+    #main-container {
+        display: flex;
+        align-items: center;
+
+        gap: 20px;
+    }
+
+    #title {
+        color: var(--title);
+        font-style: "Bold";
+
+        text-shadow: 0 0 5px var(--title);
+    }
+</style>

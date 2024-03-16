@@ -1,0 +1,22 @@
+---
+import "../styles/global.css";
+import Result from "../components/Result.astro";
+---
+
+<!docktype html>
+<html>
+    <body>
+        <div id="result-list">
+            <Result title="Web Page" description="Lorem ipsum dolor sit amet haha this is terrible" score="99"/>
+            <Result title="Web Page" description="Lorem ipsum dolor sit amet haha this is terrible" score="39"/>
+            <Result title="Web Page" description="Lorem ipsum dolor sit amet haha this is terrible" score="19"/>
+        </div>
+    </body>
+
+    <style>
+        #result-list {
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
+</html>

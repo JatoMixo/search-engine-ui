@@ -6,6 +6,12 @@
 
 @font-face {
     font-family: "Montserrat";
+    font-style: thin;
+    src: url("/Montserrat/static/Montserrat-Thin.ttf");
+}
+
+@font-face {
+    font-family: "Montserrat";
     font-style: normal;
     src: url("/Montserrat/static/Montserrat-Regular.ttf");
 }
