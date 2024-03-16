@@ -4,7 +4,12 @@
 <div id="main-container">
     <input type="text" id="query-input"/>
     <button id="search-button">
-        <img src="/search-icon.svg" id="search-icon"/>
+        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 16 16" id="search-icon">
+            <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5">
+                <path d="m11.25 11.25l3 3"/>
+                <circle cx="7.5" cy="7.5" r="4.75"/>
+            </g>
+        </svg>
     </button>
 </div>
 
@@ -25,7 +30,7 @@
         align-items: center;
         
         padding-left: 40px;
-        padding-right: 25px;
+        padding-right: 30px;
 
         display: flex;
 
@@ -40,6 +45,11 @@
         border: none;
         border-left: solid 1px white;
         padding-left: 5px;
+
+        height: 48px;
+        width: 50px;
+
+        padding-left: 10px;
     }
 
     #query-input {
@@ -62,7 +72,17 @@
     #search-icon {
         color: var(--intense-red);
 
-        width: 36px;
-        height: 36px;
+        width: 45px;
+        height: 45px;
+
+        transition: color 200ms, filter 100ms;
+    }
+
+    #search-icon:hover {
+        color: #FF0000;
+    }
+
+    #search-icon:active {
+        filter: blur(3px);
     }
 </style>

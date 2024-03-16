@@ -1,13 +1,13 @@
 @font-face {
     font-family: "Montserrat";
     font-style: bold;
-    src: url("../../public/Montserrat/static/Montserrat-Bold.ttf");
+    src: url("/Montserrat/static/Montserrat-Bold.ttf");
 }
 
 @font-face {
     font-family: "Montserrat";
     font-style: normal;
-    src: url("../../public/Montserrat/static/Montserrat-Regular.ttf");
+    src: url("/Montserrat/static/Montserrat-Regular.ttf");
 }
 
 :root {
