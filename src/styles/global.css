@@ -11,27 +11,12 @@
 }
 
 :root {
-    /* VARIABLES */
-    --background: #050505;
+    --background: #17171C;
+    --text: #979797;
+    --title: #FFFFFF;
+    --dark-shadow: #000000;
 
-    --text: #e1e1e1;
-    --title: #ffffff;
-
-    /* GENERAL STYLES */
     background-color: var(--background);
-}
-
-p {
-    font-size: 22px;
-
+    font-family: "Montserrat";
     color: var(--text);
-    font-family: "Montserrat";
-}
-
-h1 {
-    font-size: 30px;
-    font-family: "Montserrat";
-    font-style: bold;
-
-    color: var(--title);
 }

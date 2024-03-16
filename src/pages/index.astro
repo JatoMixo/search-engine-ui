@@ -1,11 +1,19 @@
 ---
 import "../styles/global.css";
+import SearchBar from "../components/SearchBar.astro";
 ---
 
 <!docktype html>
 <html>
 	<body>
-		<h1>Title</h1>
-		<p>This is just a test</p>
+		<div id="search-bar-container">
+			<SearchBar/>
+		</div>
 	</body>
+	<style>
+		#search-bar-container {
+			transform: translateX(25vw) translateY(25vh);
+			width: 70vw;
+		}
+	</style>
 </html>
