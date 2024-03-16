@@ -1,7 +1,7 @@
 # Search Engine UI
 A small UI intended for a Search Engine, built with astro.
 
-[The Search Engine](./SearchEngine.png)
+![The Search Engine](./SearchEngine.png)
 
 ## Documentation
 The project contains the following components:
