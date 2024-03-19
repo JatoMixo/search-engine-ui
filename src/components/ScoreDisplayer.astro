@@ -1,4 +1,5 @@
 ---
+// The displayer was taken from: https://codepen.io/leandroamato/pen/jOWqrGe
 import "../styles/global.css";
 
 const {
@@ -19,6 +20,19 @@ const COLORS = {
         "light": "#FF0000",
     }
 }
+
+let darkColor = "";
+let lightColor = "";
+
+Object.keys(COLORS).forEach((color_limit) => {
+    if (score >= color_limit && darkColor == "") {
+        //@ts-ignore
+        darkColor = COLORS[color_limit]["dark"];
+
+        //@ts-ignore
+        lightColor = COLORS[color_limit]["light"];
+    }
+});
 ---
 
 <div id="outer-circle">
@@ -27,7 +41,9 @@ const COLORS = {
     </div>
 </div>
 
-<style>
+<style
+    define:vars={{ score: `${score}%`, dark: darkColor, light: lightColor }}
+>
     :root {
         --circle-width: 20px;
     }
@@ -36,13 +52,15 @@ const COLORS = {
         color: var(--title);
         font-size: 32px;
         text-shadow: 0 0 3px var(--title);
+
+        z-index: 2;
     }
 
     #outer-circle {
-        border: var(--circle-width) solid #003E27;
+        border: var(--circle-width) solid var(--dark);
         border-radius: 50%;
 
-        box-shadow: 0 0 15px 0 #003E27, inset 0 0 15px 0 #003E27;
+        box-shadow: 0 0 15px 0 var(--dark), inset 0 0 15px 0 var(--dark);
 
         width: 100px;
         height: 100px;
@@ -52,20 +70,38 @@ const COLORS = {
     }
 
     #inner-circle {
-        border: var(--circle-width) solid #0FEB3F;
-        border-radius: 50%;
-
-        box-shadow: 0 0 15px 0 #0FEB3F, inset 0 0 15px 0 #0FEB3F;
-
-        width: 100px;
-        height: 100px;
-
-        margin: 0;
-        margin-top: calc(-1 * var(--circle-width));
-        margin-left: calc(-1 * var(--circle-width));
-
+        position: relative;
         display: flex;
         align-items: center;
         justify-content: center;
+        border-radius: 100%;
+        overflow: hidden;
+        
+        margin: calc(-1 * var(--circle-width));
+        width: calc(100px + var(--circle-width) * 2);
+        height: calc(100px + var(--circle-width) * 2);
+
+        line-height: 1;
+
+        background: conic-gradient(var(--light) var(--score), transparent 0 100%)
+    }
+
+    /* Bar mask, creates an inner circle with the same color as the background */
+    #inner-circle::after {
+        content: "";
+        position: absolute;
+        inset: var(--circle-width);
+        background: var(--background);
+        border-radius: inherit;
+        z-index: 1;
+    }
+
+    /* Bar background */
+    #inner-circle::before {
+        content: "";
+        position: absolute;
+        inset: var(--circle-width);
+        border-radius: inherit;
+        z-index: -1;
     }
 </style>
