@@ -24,7 +24,7 @@ const COLORS = {
 let darkColor = "";
 let lightColor = "";
 
-Object.keys(COLORS).forEach((color_limit) => {
+Object.keys(COLORS).sort().reverse().forEach((color_limit) => {
     if (score >= color_limit && darkColor == "") {
         //@ts-ignore
         darkColor = COLORS[color_limit]["dark"];
@@ -83,7 +83,7 @@ Object.keys(COLORS).forEach((color_limit) => {
 
         line-height: 1;
 
-        background: conic-gradient(var(--light) var(--score), transparent 0 100%)
+        background: conic-gradient(var(--light) var(--score), transparent 0 100%);
     }
 
     /* Bar mask, creates an inner circle with the same color as the background */
@@ -94,14 +94,7 @@ Object.keys(COLORS).forEach((color_limit) => {
         background: var(--background);
         border-radius: inherit;
         z-index: 1;
-    }
 
-    /* Bar background */
-    #inner-circle::before {
-        content: "";
-        position: absolute;
-        inset: var(--circle-width);
-        border-radius: inherit;
-        z-index: -1;
+        box-shadow: inset 0 0 15px 0 var(--dark);
     }
 </style>
