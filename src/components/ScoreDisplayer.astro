@@ -7,7 +7,7 @@ const {
 } = Astro.props;
 
 const COLORS = {
-    80: {
+    50: {
         "dark": "#003E27",
         "light": "#0FEB3F",
     },
@@ -25,7 +25,7 @@ let darkColor = "";
 let lightColor = "";
 
 Object.keys(COLORS).sort().reverse().forEach((color_limit) => {
-    if (score >= color_limit && darkColor == "") {
+    if (+score >= +color_limit && darkColor == "") {
         //@ts-ignore
         darkColor = COLORS[color_limit]["dark"];
 
@@ -69,7 +69,7 @@ Object.keys(COLORS).sort().reverse().forEach((color_limit) => {
         margin: 0;
     }
 
-    #inner-circle {
+    #inner-circle, #inner-circle-shadow {
         position: relative;
         display: flex;
         align-items: center;
@@ -87,7 +87,7 @@ Object.keys(COLORS).sort().reverse().forEach((color_limit) => {
     }
 
     /* Bar mask, creates an inner circle with the same color as the background */
-    #inner-circle::after {
+    #inner-circle::after, #inner-circle-shadow::after {
         content: "";
         position: absolute;
         inset: var(--circle-width);
